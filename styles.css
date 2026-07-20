@@ -70,7 +70,6 @@ button {
   margin: 0 auto;
 }
 
-.premise-grid > *,
 .purpose-grid > *,
 .architecture-shell > *,
 .demo-stage > * {
@@ -527,76 +526,9 @@ button {
   animation: scroll-pulse 1.8s ease-in-out infinite;
 }
 
-.premise {
-  padding: 160px 0 140px;
-}
-
-.premise-grid {
-  display: grid;
-  grid-template-columns: 0.42fr 1.35fr;
-  gap: 0 8vw;
-}
-
-.premise .section-index,
 .capabilities .section-index,
 .start .section-index {
   color: rgba(16, 21, 18, 0.5);
-}
-
-.display-kicker {
-  margin: 0;
-  font-family: var(--display);
-  font-size: clamp(2rem, 4vw, 4.5rem);
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -0.045em;
-}
-
-.premise-copy h2 {
-  margin: 0;
-  font-family: var(--display);
-  font-size: clamp(5rem, 10vw, 11.5rem);
-  font-weight: 300;
-  line-height: 0.82;
-  letter-spacing: -0.075em;
-}
-
-.premise-copy > p:last-child {
-  max-width: 530px;
-  margin: 53px 0 0 28%;
-  color: rgba(16, 21, 18, 0.66);
-  font-size: 18px;
-}
-
-.signal-sentence {
-  grid-column: 1 / -1;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  min-width: 0;
-  margin-top: 120px;
-  padding-top: 25px;
-  color: rgba(16, 21, 18, 0.62);
-  border-top: 1px solid var(--line-light);
-  font-family: var(--display);
-  font-size: clamp(1.1rem, 1.7vw, 1.5rem);
-}
-
-.signal-sentence i {
-  height: 1px;
-  margin: 0 22px;
-  background: rgba(16, 21, 18, 0.22);
-  flex: 1;
-}
-
-.signal-sentence i::after {
-  display: block;
-  width: 7px;
-  height: 7px;
-  margin-top: -3px;
-  content: "";
-  background: var(--ink);
-  border-radius: 50%;
 }
 
 .demos {
@@ -1705,24 +1637,14 @@ button {
     display: none;
   }
 
-  .premise-grid,
   .purpose-grid,
   .architecture-shell,
   .grounding-heading {
     grid-template-columns: 1fr;
   }
 
-  .premise-copy {
-    margin-top: 60px;
-  }
-
-  .premise-copy > p:last-child,
   .purpose-copy > p:last-child {
     margin-left: 0;
-  }
-
-  .signal-sentence {
-    overflow-x: auto;
   }
 
   .section-heading {
@@ -1844,7 +1766,6 @@ button {
     grid-row: 2;
   }
 
-  .premise,
   .demos,
   .capabilities,
   .grounding,
@@ -1852,30 +1773,6 @@ button {
   .purpose,
   .start {
     padding: 95px 0;
-  }
-
-  .premise-copy {
-    margin-top: 40px;
-  }
-
-  .premise-copy h2 {
-    font-size: 22vw;
-  }
-
-  .premise-copy > p:last-child {
-    margin-top: 35px;
-    font-size: 15px;
-  }
-
-  .signal-sentence {
-    gap: 10px;
-    margin-top: 70px;
-    white-space: nowrap;
-  }
-
-  .signal-sentence i {
-    min-width: 25px;
-    margin: 0 7px;
   }
 
   .section-heading {
