@@ -984,18 +984,20 @@ button {
 
 .capability-mark {
   position: absolute;
-  top: -30px;
-  right: 5%;
+  top: 50%;
+  right: 4%;
   color: rgba(16, 21, 18, 0.035);
-  font-size: 12rem;
+  font-size: 9rem;
   font-weight: 600;
   line-height: 1;
+  pointer-events: none;
+  transform: translateY(-50%);
   transition: color 220ms ease, transform 350ms ease;
 }
 
 .capability:hover .capability-mark {
   color: rgba(102, 143, 50, 0.12);
-  transform: translateX(-14px);
+  transform: translate(-14px, -50%);
 }
 
 .grounding {
@@ -1092,11 +1094,11 @@ button {
 
 .regional-block-primary::after {
   position: absolute;
-  right: -40px;
-  bottom: -80px;
+  right: 10px;
+  bottom: 0;
   color: rgba(102, 143, 50, 0.055);
   content: "新";
-  font-size: 220px;
+  font-size: 170px;
   font-weight: 600;
 }
 
@@ -1335,17 +1337,17 @@ button {
 
 .purpose {
   position: relative;
-  padding: 155px 0;
+  padding: 115px 0 90px;
   overflow: hidden;
 }
 
 .purpose::after {
   position: absolute;
-  right: -6vw;
-  bottom: -17vw;
+  right: 2vw;
+  bottom: 3vw;
   color: rgba(22, 35, 20, 0.055);
   content: "話";
-  font-size: 42vw;
+  font-size: 26vw;
   font-weight: 600;
   line-height: 1;
 }
@@ -1900,8 +1902,8 @@ button {
   }
 
   .capability-mark {
-    right: -15px;
-    font-size: 8rem;
+    right: 0;
+    font-size: 6.5rem;
   }
 
   .architecture-flow {
