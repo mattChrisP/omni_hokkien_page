@@ -981,6 +981,233 @@ button {
   transform: translateX(-14px);
 }
 
+.grounding {
+  padding: 150px 0;
+}
+
+.grounding .section-index {
+  color: rgba(16, 21, 18, 0.5);
+}
+
+.grounding-heading {
+  display: grid;
+  grid-template-columns: 0.42fr 1.35fr;
+  gap: 8vw;
+  align-items: start;
+}
+
+.grounding-heading h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(4.5rem, 7.6vw, 8.8rem);
+  font-weight: 300;
+  line-height: 0.85;
+  letter-spacing: -0.065em;
+}
+
+.grounding-heading h2 em {
+  color: #668f32;
+  font-weight: 300;
+}
+
+.grounding-heading .display-kicker {
+  margin-bottom: 7px;
+  font-size: clamp(1.7rem, 2.9vw, 3.4rem);
+}
+
+.regional-story {
+  display: grid;
+  grid-template-columns: 1fr 170px 1fr;
+  margin-top: 105px;
+  border-top: 1px solid var(--line-light);
+  border-bottom: 1px solid var(--line-light);
+}
+
+.regional-block {
+  position: relative;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
+  min-height: 355px;
+  padding: 58px 35px 52px 0;
+  overflow: hidden;
+}
+
+.regional-block:last-child {
+  padding-right: 0;
+  padding-left: 35px;
+}
+
+.regional-code {
+  color: rgba(16, 21, 18, 0.08);
+  font-family: var(--display);
+  font-size: 70px;
+  font-weight: 300;
+  line-height: 0.8;
+  letter-spacing: -0.06em;
+}
+
+.regional-label {
+  margin: 0;
+  color: #668f32;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.regional-block h3,
+.training-intro h3 {
+  margin: 17px 0 0;
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 3vw, 3.5rem);
+  font-weight: 300;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+}
+
+.regional-block div > p:last-child {
+  max-width: 410px;
+  margin: 30px 0 0;
+  color: rgba(16, 21, 18, 0.58);
+  font-size: 13px;
+}
+
+.regional-block-primary::after {
+  position: absolute;
+  right: -40px;
+  bottom: -80px;
+  color: rgba(102, 143, 50, 0.055);
+  content: "新";
+  font-size: 220px;
+  font-weight: 600;
+}
+
+.regional-link {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  color: rgba(16, 21, 18, 0.35);
+  border-right: 1px solid var(--line-light);
+  border-left: 1px solid var(--line-light);
+  text-align: center;
+}
+
+.regional-link span {
+  display: block;
+  width: 1px;
+  height: 65px;
+  background: linear-gradient(transparent, #668f32);
+}
+
+.regional-link span:last-child {
+  background: linear-gradient(#668f32, transparent);
+}
+
+.regional-link p {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+.training-story {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 7vw;
+  margin-top: 70px;
+  padding: 64px;
+  color: var(--paper);
+  background:
+    radial-gradient(circle at 8% 110%, rgba(185, 243, 107, 0.12), transparent 31%),
+    var(--ink);
+}
+
+.training-intro h3 {
+  color: var(--paper);
+}
+
+.training-intro > p:last-child {
+  max-width: 390px;
+  margin: 28px 0 0;
+  color: rgba(240, 238, 230, 0.48);
+  font-size: 12px;
+}
+
+.training-steps {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-top: 1px solid var(--line-dark);
+}
+
+.training-steps li {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 18px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.training-steps li > span {
+  color: var(--jade);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.training-steps strong {
+  font-family: var(--display);
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.training-steps p {
+  margin: 4px 0 0;
+  color: rgba(240, 238, 230, 0.42);
+  font-size: 11px;
+}
+
+.application-line {
+  display: grid;
+  grid-template-columns: 0.42fr 1.35fr;
+  gap: 8vw;
+  align-items: start;
+  margin-top: 70px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line-light);
+}
+
+.application-line > p {
+  margin: 0;
+  color: rgba(16, 21, 18, 0.45);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.application-line > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.application-line span {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line-light);
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 2.2vw, 2.3rem);
+  font-weight: 300;
+}
+
+.application-line span:nth-child(even) {
+  padding-left: 35px;
+  border-left: 1px solid var(--line-light);
+}
+
 .architecture {
   padding: 150px 0;
 }
@@ -1395,7 +1622,8 @@ button {
 
   .premise-grid,
   .purpose-grid,
-  .architecture-shell {
+  .architecture-shell,
+  .grounding-heading {
     grid-template-columns: 1fr;
   }
 
@@ -1439,6 +1667,22 @@ button {
 
   .architecture-footnote {
     grid-column: 1;
+  }
+
+  .grounding-heading > div {
+    margin-top: 55px;
+  }
+
+  .regional-story {
+    grid-template-columns: 1fr 110px 1fr;
+  }
+
+  .regional-block {
+    grid-template-columns: 1fr;
+  }
+
+  .training-story {
+    padding: 48px;
   }
 }
 
@@ -1518,6 +1762,7 @@ button {
   .premise,
   .demos,
   .capabilities,
+  .grounding,
   .architecture,
   .purpose,
   .start {
@@ -1553,6 +1798,7 @@ button {
   }
 
   .section-heading h2,
+  .grounding-heading h2,
   .architecture-copy h2,
   .start h2,
   .purpose h2 {
@@ -1656,6 +1902,67 @@ button {
 
   .architecture-flow {
     margin-top: 50px;
+  }
+
+  .grounding-heading > div {
+    margin-top: 40px;
+  }
+
+  .regional-story {
+    display: block;
+    margin-top: 65px;
+  }
+
+  .regional-block,
+  .regional-block:last-child {
+    grid-template-columns: 65px 1fr;
+    min-height: 0;
+    padding: 40px 0;
+  }
+
+  .regional-code {
+    font-size: 48px;
+  }
+
+  .regional-link {
+    flex-direction: row;
+    gap: 12px;
+    padding: 19px 0;
+    border: 0;
+    border-top: 1px solid var(--line-light);
+    border-bottom: 1px solid var(--line-light);
+  }
+
+  .regional-link span {
+    width: 58px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #668f32);
+  }
+
+  .regional-link span:last-child {
+    background: linear-gradient(90deg, #668f32, transparent);
+  }
+
+  .training-story {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    margin-top: 50px;
+    padding: 36px 24px;
+  }
+
+  .application-line {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 50px;
+  }
+
+  .application-line > div {
+    grid-template-columns: 1fr;
+  }
+
+  .application-line span:nth-child(even) {
+    padding-left: 0;
+    border-left: 0;
   }
 
   .architecture-step {

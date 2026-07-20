@@ -19,6 +19,12 @@ Demo metadata lives in the `demos` array near the top of `script.js`. Audio
 files are stored in `assets/audio/`. Add or remove an object from that array to
 update the demo selector.
 
+## Content source
+
+The expanded positioning and feature notes were contributed in
+[`hokkienlm project page.md`](<hokkienlm project page.md>) and adapted for the
+live page with the release's documented input and output scope.
+
 ## Deployment
 
 The repository is configured for GitHub Pages through

@@ -6,14 +6,14 @@
     <meta name="theme-color" content="#101512" />
     <meta
       name="description"
-      content="OmniHokkien listens, understands, and replies naturally in spoken Singapore Hokkien."
+      content="OmniHokkien is a large audio-language model that listens, understands, and replies naturally in spoken Singapore Hokkien."
     />
     <meta property="og:title" content="OmniHokkien — Singapore Hokkien, understood and spoken" />
     <meta
       property="og:description"
       content="An open conversational speech model for Singapore Hokkien from SUTD iNLP Lab."
     />
-    <title>OmniHokkien — Singapore Hokkien, understood and spoken</title>
+    <title>OmniHokkien — A Large Audio-Language Model for Singapore Hokkien</title>
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,6 +39,7 @@
       <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
         <a href="#listen">Listen</a>
         <a href="#capabilities">Capabilities</a>
+        <a href="#grounding">Grounding</a>
         <a href="#architecture">Architecture</a>
         <a href="#start">Get started</a>
         <a
@@ -64,8 +65,8 @@
           <p class="hero-brand">OmniHokkien</p>
           <h1 id="hero-title">Singapore Hokkien,<br /><em>understood and spoken.</em></h1>
           <p class="hero-summary">
-            A conversational speech model that listens to Hokkien or reads text,
-            then responds in Hokkien text and voice.
+            A large audio-language model that listens to Hokkien or reads English,
+            Chinese, and Hokkien text—then replies in Hokkien text and voice.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#listen">
@@ -214,10 +215,96 @@
         </div>
       </section>
 
+      <section id="grounding" class="grounding section-light" aria-labelledby="grounding-title">
+        <div class="section-shell">
+          <div class="grounding-heading reveal">
+            <p class="section-index">04 / Language grounding</p>
+            <div>
+              <p class="display-kicker">Singapore at the centre.</p>
+              <h2 id="grounding-title">A wider Hokkien<br /><em>foundation.</em></h2>
+            </div>
+          </div>
+
+          <div class="regional-story reveal">
+            <article class="regional-block regional-block-primary">
+              <span class="regional-code">SG</span>
+              <div>
+                <p class="regional-label">Singapore-grounded</p>
+                <h3>Everyday rhythms,<br />local turns of phrase.</h3>
+                <p>
+                  Singaporean Hokkien data anchors the model in the conversational
+                  patterns, practical language, and code-switching heard locally.
+                </p>
+              </div>
+            </article>
+            <div class="regional-link" aria-hidden="true">
+              <span></span>
+              <p>one shared<br />linguistic base</p>
+              <span></span>
+            </div>
+            <article class="regional-block">
+              <span class="regional-code">TW</span>
+              <div>
+                <p class="regional-label">Taiwan-informed</p>
+                <h3>Broader vocabulary,<br />deeper grounding.</h3>
+                <p>
+                  Taiwanese Hokkien data adds linguistic breadth while the released
+                  assistant remains focused on Singapore Hokkien conversation.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div class="training-story reveal">
+            <div class="training-intro">
+              <p class="regional-label">Staged training</p>
+              <h3>Capability,<br />built layer by layer.</h3>
+              <p>
+                The model is progressively specialised—from understanding Hokkien
+                to carrying its response across architectures and speaking it aloud.
+              </p>
+            </div>
+            <ol class="training-steps">
+              <li>
+                <span>01</span>
+                <div>
+                  <strong>Ground understanding</strong>
+                  <p>Adapt multimodal reasoning to Hokkien audio and text.</p>
+                </div>
+              </li>
+              <li>
+                <span>02</span>
+                <div>
+                  <strong>Align the bridge</strong>
+                  <p>Map Qwen2.5 answer representations into Qwen3 text tokens.</p>
+                </div>
+              </li>
+              <li>
+                <span>03</span>
+                <div>
+                  <strong>Shape the voice</strong>
+                  <p>Adapt the bridge and Talker together for fluent speech output.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <div class="application-line reveal">
+            <p>What it opens up</p>
+            <div>
+              <span>Voice assistants</span>
+              <span>Conversational agents</span>
+              <span>Accessibility tools</span>
+              <span>Language education</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="architecture" class="architecture section-ink" aria-labelledby="architecture-title">
         <div class="section-shell architecture-shell">
           <div class="architecture-copy reveal">
-            <p class="section-index">04 / Under the hood</p>
+            <p class="section-index">05 / Under the hood</p>
             <h2 id="architecture-title">One model.<br /><em>Three learned acts.</em></h2>
             <p>
               OmniHokkien joins multimodal understanding with a trained bridge and
@@ -262,7 +349,7 @@
 
       <section class="purpose section-jade" aria-labelledby="purpose-title">
         <div class="section-shell purpose-grid">
-          <p class="section-index reveal">05 / Why Hokkien</p>
+          <p class="section-index reveal">06 / Why Hokkien</p>
           <div class="purpose-copy reveal">
             <p class="purpose-hanji" aria-hidden="true">予話繼續講落去。</p>
             <h2 id="purpose-title">Keep the language<br />in everyday life.</h2>
@@ -279,7 +366,7 @@
         <div class="section-shell">
           <div class="section-heading section-heading-dark reveal">
             <div>
-              <p class="section-index">06 / Try it</p>
+              <p class="section-index">07 / Try it</p>
               <h2 id="start-title">Start with<br /><em>one conversation.</em></h2>
             </div>
             <p class="section-intro">
@@ -350,4 +437,3 @@ output = model.generate(
     </footer>
   </body>
 </html>
-
