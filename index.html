@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101512" />
+    <meta
+      name="description"
+      content="OmniHokkien listens, understands, and replies naturally in spoken Singapore Hokkien."
+    />
+    <meta property="og:title" content="OmniHokkien — Singapore Hokkien, understood and spoken" />
+    <meta
+      property="og:description"
+      content="An open conversational speech model for Singapore Hokkien from SUTD iNLP Lab."
+    />
+    <title>OmniHokkien — Singapore Hokkien, understood and spoken</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Noto+Sans+TC:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-progress" aria-hidden="true"><span></span></div>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="#top" aria-label="OmniHokkien home">
+        <span class="wordmark-signal" aria-hidden="true"></span>
+        OmniHokkien
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">Toggle menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="#listen">Listen</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#start">Get started</a>
+        <a
+          class="nav-external"
+          href="https://huggingface.co/iNLP-Lab/OmniHokkien"
+          target="_blank"
+          rel="noreferrer"
+        >Hugging Face <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-atmosphere" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="hero-wave" data-hero-wave></div>
+          <div class="hero-character">聽</div>
+        </div>
+
+        <div class="hero-content">
+          <p class="eyebrow hero-eyebrow">SUTD iNLP Lab presents</p>
+          <p class="hero-brand">OmniHokkien</p>
+          <h1 id="hero-title">Singapore Hokkien,<br /><em>understood and spoken.</em></h1>
+          <p class="hero-summary">
+            A conversational speech model that listens to Hokkien or reads text,
+            then responds in Hokkien text and voice.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#listen">
+              <span class="button-icon" aria-hidden="true">▶</span>
+              Listen to the model
+            </a>
+            <a
+              class="button button-quiet"
+              href="https://huggingface.co/iNLP-Lab/OmniHokkien"
+              target="_blank"
+              rel="noreferrer"
+            >Explore the release <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+
+        <div class="hero-listen" data-feature-player>
+          <button class="feature-play" type="button" aria-label="Play featured OmniHokkien response">
+            <span class="play-symbol" aria-hidden="true">▶</span>
+          </button>
+          <div class="feature-copy">
+            <span class="feature-label">Hear a reply</span>
+            <strong>“I’m feeling awful today.”</strong>
+          </div>
+          <div class="feature-progress" aria-hidden="true"><span></span></div>
+          <time class="feature-time">00:00</time>
+          <audio preload="metadata" src="./assets/audio/empathy-en.wav"></audio>
+        </div>
+
+        <a class="scroll-cue" href="#premise">
+          <span>Discover</span>
+          <span class="scroll-line" aria-hidden="true"></span>
+        </a>
+      </section>
+
+      <section id="premise" class="premise section-light">
+        <div class="section-shell premise-grid">
+          <p class="section-index reveal">01 / The premise</p>
+          <div class="premise-copy reveal">
+            <p class="display-kicker">Not transcription.</p>
+            <h2>Conversation.</h2>
+            <p>
+              OmniHokkien does not simply repeat what it hears. It understands
+              the request, forms a response, and speaks back in Hokkien.
+            </p>
+          </div>
+          <div class="signal-sentence reveal" aria-label="Listen, understand, answer, speak">
+            <span>Listen</span><i></i><span>Understand</span><i></i><span>Answer</span><i></i><span>Speak</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="listen" class="demos section-ink" aria-labelledby="listen-title">
+        <div class="section-shell">
+          <div class="section-heading reveal">
+            <div>
+              <p class="section-index">02 / Listen</p>
+              <h2 id="listen-title">Hokkien in.<br /><em>Hokkien out.</em></h2>
+            </div>
+            <p class="section-intro">
+              Everyday questions, useful answers, and a voice made for conversation.
+              Select a sample and listen.
+            </p>
+          </div>
+
+          <div class="demo-filters reveal" role="tablist" aria-label="Filter demos">
+            <button class="filter-button is-active" type="button" role="tab" data-filter="all">All samples</button>
+            <button class="filter-button" type="button" role="tab" data-filter="speech">Spoken input</button>
+            <button class="filter-button" type="button" role="tab" data-filter="english">English text</button>
+            <button class="filter-button" type="button" role="tab" data-filter="chinese">Chinese text</button>
+          </div>
+
+          <div class="demo-stage reveal">
+            <div class="demo-list-wrap">
+              <ol class="demo-list" data-demo-list aria-label="Demo samples"></ol>
+            </div>
+
+            <article class="demo-detail" data-demo-detail aria-live="polite">
+              <div class="demo-detail-topline">
+                <span class="demo-kind"></span>
+                <span class="demo-count"></span>
+              </div>
+              <p class="demo-prompt-label">Input</p>
+              <h3 class="demo-prompt"></h3>
+              <div class="demo-response">
+                <p class="demo-prompt-label">OmniHokkien replies</p>
+                <p class="demo-hanji" lang="nan-Hant"></p>
+                <p class="demo-gloss"></p>
+              </div>
+              <div class="demo-player">
+                <button class="demo-play" type="button" aria-label="Play selected demo">
+                  <span aria-hidden="true">▶</span>
+                </button>
+                <div class="demo-timeline">
+                  <div class="demo-waveform" data-waveform aria-hidden="true"></div>
+                  <div class="demo-track" aria-hidden="true"><span></span></div>
+                </div>
+                <time class="demo-time">00:00 / 00:00</time>
+                <audio preload="metadata"></audio>
+              </div>
+            </article>
+          </div>
+
+          <div class="comparison-note reveal">
+            <p>Want to compare?</p>
+            <span>
+              Hear OmniHokkien alongside frontier audio models in the full release gallery.
+            </span>
+            <a
+              href="https://huggingface.co/iNLP-Lab/OmniHokkien#demo-samples"
+              target="_blank"
+              rel="noreferrer"
+            >Open comparison gallery <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+
+      <section id="capabilities" class="capabilities section-paper" aria-labelledby="capabilities-title">
+        <div class="section-shell">
+          <div class="section-heading section-heading-dark reveal">
+            <div>
+              <p class="section-index">03 / Capabilities</p>
+              <h2 id="capabilities-title">Built to keep<br /><em>the conversation moving.</em></h2>
+            </div>
+          </div>
+
+          <div class="capability-list">
+            <article class="capability reveal">
+              <span class="capability-number">01</span>
+              <h3>Listen naturally</h3>
+              <p>Ask a question in spoken Hokkien. The model processes 16 kHz audio directly.</p>
+              <span class="capability-mark" aria-hidden="true">聲</span>
+            </article>
+            <article class="capability reveal">
+              <span class="capability-number">02</span>
+              <h3>Ask in text</h3>
+              <p>English and Chinese prompts can become contextual spoken Hokkien responses.</p>
+              <span class="capability-mark" aria-hidden="true">文</span>
+            </article>
+            <article class="capability reveal">
+              <span class="capability-number">03</span>
+              <h3>Hear the answer</h3>
+              <p>Every response can return readable Hanji and expressive 24 kHz speech.</p>
+              <span class="capability-mark" aria-hidden="true">答</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="architecture" class="architecture section-ink" aria-labelledby="architecture-title">
+        <div class="section-shell architecture-shell">
+          <div class="architecture-copy reveal">
+            <p class="section-index">04 / Under the hood</p>
+            <h2 id="architecture-title">One model.<br /><em>Three learned acts.</em></h2>
+            <p>
+              OmniHokkien joins multimodal understanding with a trained bridge and
+              speech generation, packaged as one unified checkpoint.
+            </p>
+          </div>
+
+          <div class="architecture-flow reveal" aria-label="OmniHokkien model architecture">
+            <article class="architecture-step">
+              <span class="architecture-number">01</span>
+              <div>
+                <p>Understand</p>
+                <h3>Qwen2.5-Omni</h3>
+                <span>Audio and text reasoning</span>
+              </div>
+            </article>
+            <div class="architecture-connector"><span></span></div>
+            <article class="architecture-step architecture-step-accent">
+              <span class="architecture-number">02</span>
+              <div>
+                <p>Translate representations</p>
+                <h3>Bridge1</h3>
+                <span>Our trained adapter</span>
+              </div>
+            </article>
+            <div class="architecture-connector"><span></span></div>
+            <article class="architecture-step">
+              <span class="architecture-number">03</span>
+              <div>
+                <p>Speak</p>
+                <h3>Qwen3-Omni</h3>
+                <span>Talker and waveform decoder</span>
+              </div>
+            </article>
+          </div>
+
+          <p class="architecture-footnote reveal">
+            Trained in stages with Singaporean and Taiwanese Hokkien data.
+          </p>
+        </div>
+      </section>
+
+      <section class="purpose section-jade" aria-labelledby="purpose-title">
+        <div class="section-shell purpose-grid">
+          <p class="section-index reveal">05 / Why Hokkien</p>
+          <div class="purpose-copy reveal">
+            <p class="purpose-hanji" aria-hidden="true">予話繼續講落去。</p>
+            <h2 id="purpose-title">Keep the language<br />in everyday life.</h2>
+            <p>
+              Language lives through use: family stories, practical advice, jokes,
+              comfort, and ordinary conversation. OmniHokkien is a step toward
+              making those interactions possible with modern speech technology.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="start" class="start section-paper" aria-labelledby="start-title">
+        <div class="section-shell">
+          <div class="section-heading section-heading-dark reveal">
+            <div>
+              <p class="section-index">06 / Try it</p>
+              <h2 id="start-title">Start with<br /><em>one conversation.</em></h2>
+            </div>
+            <p class="section-intro">
+              Download the unified checkpoint and its included inference runtime from Hugging Face.
+            </p>
+          </div>
+
+          <div class="code-panel reveal">
+            <div class="code-panel-top">
+              <span>Python · spoken question</span>
+              <button class="copy-button" type="button" data-copy-code>
+                <span class="copy-icon" aria-hidden="true">⧉</span>
+                <span class="copy-label">Copy</span>
+              </button>
+            </div>
+            <pre><code><span class="code-keyword">from</span> omnihokkien <span class="code-keyword">import</span> OmniHokkien
+
+model = OmniHokkien.from_pretrained(
+    <span class="code-string">"iNLP-Lab/OmniHokkien"</span>,
+    device_map=<span class="code-string">"cuda:0"</span>,
+)
+
+output = model.generate(
+    audio=<span class="code-string">"question.wav"</span>,
+    language=<span class="code-string">"nan"</span>,
+)
+
+<span class="code-function">print</span>(output.text)</code></pre>
+          </div>
+
+          <div class="start-actions reveal">
+            <a
+              class="button button-dark"
+              href="https://huggingface.co/iNLP-Lab/OmniHokkien"
+              target="_blank"
+              rel="noreferrer"
+            >Get the model <span aria-hidden="true">↗</span></a>
+            <a
+              class="text-link"
+              href="https://github.com/mattChrisP/omni_hokkien_page"
+              target="_blank"
+              rel="noreferrer"
+            >View project source <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-ink">
+      <div class="section-shell footer-grid">
+        <div>
+          <a class="wordmark footer-wordmark" href="#top">
+            <span class="wordmark-signal" aria-hidden="true"></span>
+            OmniHokkien
+          </a>
+          <p>Conversational Singapore Hokkien speech research from SUTD iNLP Lab.</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://huggingface.co/iNLP-Lab/OmniHokkien" target="_blank" rel="noreferrer">Hugging Face ↗</a>
+          <a href="https://inlp-lab.github.io/" target="_blank" rel="noreferrer">iNLP Lab ↗</a>
+          <a href="#start">Usage</a>
+        </div>
+        <p class="footer-note">
+          Research release. Model responses may be incomplete or inaccurate.
+        </p>
+        <p class="footer-copyright">© <span data-year></span> SUTD iNLP Lab</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
