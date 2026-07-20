@@ -1,47 +1,51 @@
 const demos = [
   {
-    id: "support",
-    title: "A listening ear",
+    id: "writing",
+    title: "Writing help",
     category: "speech",
     kind: "Spoken Hokkien input",
-    prompt: "An everyday spoken question about feeling troubled.",
-    response: "按呢啊，敢是有啥物代志予你烦恼？讲予我听，我陪你。",
-    gloss: "“Is something troubling you? Tell me about it — I’ll stay and listen.”",
-    audio: "./assets/audio/support.wav",
+    inputAudio: "./assets/audio/input-writing.wav",
+    inputDuration: "00:07",
+    response: "好啊，无问题。你先共我讲，你是欲写予谁？",
+    gloss: "“Sure, no problem. First tell me: who are you writing it for?”",
+    audio: "./assets/audio/writing.wav",
     duration: "00:04",
-  },
-  {
-    id: "cooking",
-    title: "Cooking guidance",
-    category: "speech",
-    kind: "Spoken Hokkien input",
-    prompt: "A practical question about preparing mee sua.",
-    response: "会使啊！我教你。你先准备一锅水，落落盐佮油，水滚了才落面线，按呢才会袂糊糊。",
-    gloss: "“Sure, I’ll teach you. Prepare a pot of water with salt and oil, then add the mee sua only when it boils so it won’t turn mushy.”",
-    audio: "./assets/audio/cooking.wav",
-    duration: "00:07",
-  },
-  {
-    id: "advice",
-    title: "Everyday advice",
-    category: "speech",
-    kind: "Spoken Hokkien input",
-    prompt: "A request for a small way to feel better.",
-    response: "会使啊，你通试看觅，先去公园散步，抑是去公园食茶，心情会较好。",
-    gloss: "“You could try taking a walk in the park, or sit down for tea. It may help you feel better.”",
-    audio: "./assets/audio/everyday-advice.wav",
-    duration: "00:06",
   },
   {
     id: "proverb",
     title: "A familiar proverb",
     category: "speech",
     kind: "Spoken Hokkien input",
-    prompt: "A request for an old story from Hokkien culture.",
-    response: "好啊，我讲一个古早的代志予你听。你敢有听过「食果子，拜树头」？",
-    gloss: "“Let me tell you something from long ago. Have you heard: when eating the fruit, remember the tree?”",
-    audio: "./assets/audio/proverb.wav",
+    inputAudio: "./assets/audio/input-proverb.wav",
+    inputDuration: "00:03",
+    response: "好啊！我讲一个予你听。阿公，你敢有听过「食果子，拜树头」？",
+    gloss: "“Sure, I’ll tell you one. Grandpa, have you heard: when eating the fruit, remember the tree?”",
+    audio: "./assets/audio/proverb-curated.wav",
     duration: "00:05",
+  },
+  {
+    id: "meaning",
+    title: "Understanding a saying",
+    category: "speech",
+    kind: "Spoken Hokkien input",
+    inputAudio: "./assets/audio/input-meaning.wav",
+    inputDuration: "00:04",
+    response: "意思就是讲，做人毋通太慌慢，爱有礼貌，按呢才会有人佮你做伙。",
+    gloss: "“It means we shouldn’t be hasty or careless; be courteous, and people will want to be with you.”",
+    audio: "./assets/audio/meaning.wav",
+    duration: "00:05",
+  },
+  {
+    id: "advice",
+    title: "Everyday advice",
+    category: "speech",
+    kind: "Spoken Hokkien input",
+    inputAudio: "./assets/audio/input-advice.wav",
+    inputDuration: "00:04",
+    response: "会使啊，你通试看觅，先去公园散步，抑是去公园食茶，心情会较好。",
+    gloss: "“You could try taking a walk in the park, or sit down for tea. It may help you feel better.”",
+    audio: "./assets/audio/everyday-advice.wav",
+    duration: "00:06",
   },
   {
     id: "empathy-en",
@@ -97,10 +101,16 @@ const state = {
 
 const demoList = document.querySelector("[data-demo-list]");
 const demoDetail = document.querySelector("[data-demo-detail]");
-const demoAudio = demoDetail?.querySelector("audio");
+const demoAudio = demoDetail?.querySelector("[data-reply-audio]");
 const demoPlay = demoDetail?.querySelector(".demo-play");
 const demoTrack = demoDetail?.querySelector(".demo-track span");
 const demoTime = demoDetail?.querySelector(".demo-time");
+const demoTextInput = demoDetail?.querySelector(".demo-text-input");
+const demoAudioInput = demoDetail?.querySelector(".demo-audio-input");
+const inputAudio = demoDetail?.querySelector("[data-input-audio]");
+const inputPlay = demoDetail?.querySelector(".input-play");
+const inputTrack = demoDetail?.querySelector(".input-track span");
+const inputTime = demoDetail?.querySelector(".input-time");
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds)) return "00:00";
@@ -168,15 +178,30 @@ function renderDemoList() {
 }
 
 function renderDemoDetail() {
-  if (!demoDetail || !demoAudio) return;
+  if (!demoDetail || !demoAudio || !inputAudio) return;
   const demo = demos.find((item) => item.id === state.selectedId);
   if (!demo) return;
 
   demoAudio.pause();
+  inputAudio.pause();
   demoAudio.src = demo.audio;
   demoAudio.load();
   demoDetail.querySelector(".demo-kind").textContent = demo.kind;
-  demoDetail.querySelector(".demo-prompt").textContent = demo.prompt;
+  const hasInputAudio = Boolean(demo.inputAudio);
+  demoTextInput.hidden = hasInputAudio;
+  demoAudioInput.hidden = !hasInputAudio;
+  demoDetail.querySelector(".demo-prompt").textContent = demo.prompt ?? "";
+  if (hasInputAudio) {
+    inputAudio.src = demo.inputAudio;
+    inputAudio.load();
+    inputTrack.style.width = "0%";
+    inputTime.textContent = `00:00 / ${demo.inputDuration}`;
+    inputPlay.querySelector("span").textContent = "▶";
+    makeBars(demoDetail.querySelector("[data-input-waveform]"), 64, demos.indexOf(demo) + 17);
+  } else {
+    inputAudio.removeAttribute("src");
+    inputAudio.load();
+  }
   demoDetail.querySelector(".demo-hanji").textContent = demo.response;
   demoDetail.querySelector(".demo-gloss").textContent = demo.gloss;
   demoTrack.style.width = "0%";
@@ -215,13 +240,51 @@ demoAudio?.addEventListener("pause", () => {
 });
 
 demoAudio?.addEventListener("timeupdate", () => {
+  const demo = demos.find((item) => item.id === state.selectedId);
   const progress = demoAudio.duration ? (demoAudio.currentTime / demoAudio.duration) * 100 : 0;
   demoTrack.style.width = `${progress}%`;
-  demoTime.textContent = `${formatTime(demoAudio.currentTime)} / ${formatTime(demoAudio.duration)}`;
+  const total = Number.isFinite(demoAudio.duration) ? formatTime(demoAudio.duration) : demo?.duration ?? "00:00";
+  demoTime.textContent = `${formatTime(demoAudio.currentTime)} / ${total}`;
 });
 
 demoAudio?.addEventListener("ended", () => {
   demoAudio.currentTime = 0;
+});
+
+inputPlay?.addEventListener("click", () => {
+  stopOtherAudio(inputAudio);
+  if (inputAudio.paused) {
+    inputAudio.play();
+  } else {
+    inputAudio.pause();
+  }
+});
+
+inputAudio?.addEventListener("play", () => {
+  inputPlay.querySelector("span").textContent = "Ⅱ";
+});
+
+inputAudio?.addEventListener("pause", () => {
+  inputPlay.querySelector("span").textContent = "▶";
+});
+
+inputAudio?.addEventListener("timeupdate", () => {
+  const demo = demos.find((item) => item.id === state.selectedId);
+  const progress = inputAudio.duration ? (inputAudio.currentTime / inputAudio.duration) * 100 : 0;
+  inputTrack.style.width = `${progress}%`;
+  const total = Number.isFinite(inputAudio.duration) ? formatTime(inputAudio.duration) : demo?.inputDuration ?? "00:00";
+  inputTime.textContent = `${formatTime(inputAudio.currentTime)} / ${total}`;
+});
+
+inputAudio?.addEventListener("ended", () => {
+  inputAudio.currentTime = 0;
+});
+
+document.querySelector(".input-timeline")?.addEventListener("click", (event) => {
+  if (!inputAudio?.duration) return;
+  const bounds = event.currentTarget.getBoundingClientRect();
+  const ratio = Math.max(0, Math.min(1, (event.clientX - bounds.left) / bounds.width));
+  inputAudio.currentTime = ratio * inputAudio.duration;
 });
 
 document.querySelector(".demo-timeline")?.addEventListener("click", (event) => {

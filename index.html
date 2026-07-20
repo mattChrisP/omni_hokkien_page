@@ -148,8 +148,24 @@
                 <span class="demo-kind"></span>
                 <span class="demo-count"></span>
               </div>
-              <p class="demo-prompt-label">Input</p>
-              <h3 class="demo-prompt"></h3>
+              <div class="demo-text-input">
+                <p class="demo-prompt-label">Input</p>
+                <h3 class="demo-prompt"></h3>
+              </div>
+              <div class="demo-audio-input" hidden>
+                <p class="demo-prompt-label">Input audio</p>
+                <div class="input-player">
+                  <button class="input-play" type="button" aria-label="Play Hokkien input audio">
+                    <span aria-hidden="true">▶</span>
+                  </button>
+                  <div class="input-timeline">
+                    <div class="input-waveform" data-input-waveform aria-hidden="true"></div>
+                    <div class="input-track" aria-hidden="true"><span></span></div>
+                  </div>
+                  <time class="input-time">00:00 / 00:00</time>
+                  <audio data-input-audio preload="metadata"></audio>
+                </div>
+              </div>
               <div class="demo-response">
                 <p class="demo-prompt-label">OmniHokkien replies</p>
                 <p class="demo-hanji" lang="nan-Hant"></p>
@@ -164,7 +180,7 @@
                   <div class="demo-track" aria-hidden="true"><span></span></div>
                 </div>
                 <time class="demo-time">00:00 / 00:00</time>
-                <audio preload="metadata"></audio>
+                <audio data-reply-audio preload="metadata"></audio>
               </div>
             </article>
           </div>
