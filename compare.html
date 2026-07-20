@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101512" />
+    <meta
+      name="description"
+      content="Listen to OmniHokkien alongside GPT Audio and Qwen3.5-Omni-Plus on the same Hokkien and text inputs."
+    />
+    <title>Listen side by side — OmniHokkien</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=Noto+Sans+TC:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./compare.css" />
+    <script src="./compare.js" defer></script>
+  </head>
+  <body class="compare-page">
+    <div class="page-progress" aria-hidden="true"><span></span></div>
+
+    <header class="site-header" data-header>
+      <a class="wordmark" href="./index.html" aria-label="Back to OmniHokkien home">
+        <span class="wordmark-signal" aria-hidden="true"></span>
+        OmniHokkien
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span>
+        <span class="sr-only">Toggle menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Comparison navigation">
+        <a href="#compare">Samples</a>
+        <a href="./index.html#capabilities">Capabilities</a>
+        <a href="./index.html#architecture">Architecture</a>
+        <a href="./index.html">Back to project</a>
+        <a
+          class="nav-external"
+          href="https://huggingface.co/iNLP-Lab/OmniHokkien"
+          target="_blank"
+          rel="noreferrer"
+        >Get the model <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="compare-hero" aria-labelledby="compare-title">
+        <div class="compare-hero-signal" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="section-shell compare-hero-grid">
+          <p class="section-index compare-entrance">Audio comparison</p>
+          <div class="compare-hero-copy compare-entrance">
+            <p class="compare-kicker">One input. Three responses.</p>
+            <h1 id="compare-title">Hear the<br /><em>difference.</em></h1>
+            <p>
+              Listen to the same request answered by OmniHokkien, GPT Audio,
+              and Qwen3.5-Omni-Plus. No compressed table—just aligned samples
+              you can compare at your own pace.
+            </p>
+          </div>
+          <div class="compare-model-line compare-entrance" aria-label="Models in this comparison">
+            <span>OmniHokkien</span>
+            <i></i>
+            <span>GPT Audio</span>
+            <i></i>
+            <span>Qwen3.5-Omni-Plus</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="compare" class="compare-room" aria-labelledby="room-title">
+        <div class="section-shell">
+          <div class="room-heading">
+            <div>
+              <p class="section-index">Released samples</p>
+              <h2 id="room-title">Choose an input.<br /><em>Then listen across.</em></h2>
+            </div>
+            <p>
+              Seven spoken Hokkien inputs and three text instructions,
+              reproduced from the model release.
+            </p>
+          </div>
+
+          <div class="compare-workspace">
+            <aside class="sample-rail" aria-label="Comparison samples">
+              <div class="sample-rail-topline">
+                <span>Input set</span>
+                <span>10 samples</span>
+              </div>
+              <ol class="compare-sample-list" data-compare-samples></ol>
+            </aside>
+
+            <article class="comparison-detail" data-comparison-detail aria-live="polite">
+              <div class="comparison-topline">
+                <span class="comparison-kind"></span>
+                <span class="comparison-count"></span>
+              </div>
+
+              <div class="comparison-input" data-comparison-input></div>
+
+              <div class="output-heading">
+                <p>Model responses</p>
+                <span>Play one response at a time</span>
+              </div>
+              <div class="model-outputs" data-model-outputs></div>
+
+              <div class="sample-nav">
+                <button type="button" data-previous-sample>← Previous</button>
+                <button type="button" data-next-sample>Next sample →</button>
+              </div>
+            </article>
+          </div>
+
+          <p class="comparison-method">
+            This is a qualitative listening gallery, not a numerical benchmark.
+            All audio is reproduced from the public OmniHokkien release set.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-ink">
+      <div class="section-shell footer-grid">
+        <div>
+          <a class="wordmark footer-wordmark" href="./index.html">
+            <span class="wordmark-signal" aria-hidden="true"></span>
+            OmniHokkien
+          </a>
+          <p>Conversational Singapore Hokkien speech research from SUTD iNLP Lab.</p>
+        </div>
+        <div class="footer-links">
+          <a href="./index.html">Project page</a>
+          <a href="https://huggingface.co/iNLP-Lab/OmniHokkien" target="_blank" rel="noreferrer">Hugging Face ↗</a>
+          <a href="https://inlp-lab.github.io/" target="_blank" rel="noreferrer">iNLP Lab ↗</a>
+        </div>
+        <p class="footer-note">Research release. Model responses may be incomplete or inaccurate.</p>
+        <p class="footer-copyright">© <span data-year></span> SUTD iNLP Lab</p>
+      </div>
+    </footer>
+  </body>
+</html>
