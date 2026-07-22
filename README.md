@@ -1,7 +1,9 @@
 # OmniHokkien project page
 
-An audio-first project page for **OmniHokkien**, iNLP Lab's conversational
-Singapore Hokkien speech model.
+An editorial research note for **OmniHokkien**, iNLP Lab's ongoing work on a
+conversational Singapore-Hokkien speech-to-speech system. The page documents
+the current method, selected audio samples, training data, early findings,
+limitations, and next experiments.
 
 ## Preview locally
 
@@ -19,11 +21,11 @@ Demo metadata lives in the `demos` array near the top of `script.js`. Audio
 files are stored in `assets/audio/`. Add or remove an object from that array to
 update the demo selector.
 
-## Content source
+## Comparison gallery
 
-The expanded positioning and feature notes were contributed in
-[`hokkienlm project page.md`](<hokkienlm project page.md>) and adapted for the
-live page with the release's documented input and output scope.
+`compare.html` presents the same ten inputs across OmniHokkien, GPT Audio,
+Qwen3.5-Omni-Plus, Gemini, and GLM-Voice. It is explicitly framed as a
+qualitative listening gallery rather than a numerical benchmark.
 
 ## Deployment
 

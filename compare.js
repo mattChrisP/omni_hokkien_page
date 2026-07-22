@@ -8,6 +8,8 @@ const comparisonSamples = [
       omnihokkien: "./assets/comparison/01/01_omnihokkien.wav",
       gptaudio: "./assets/comparison/01/01_gptaudio.wav",
       qwen: "./assets/comparison/01/01_qwen.wav",
+      gemini: "./assets/comparison/01/01_gemini.wav",
+      glmvoice: "./assets/comparison/01/01_glmvoice.wav",
     },
   },
   {
@@ -19,6 +21,8 @@ const comparisonSamples = [
       omnihokkien: "./assets/comparison/02/02_omnihokkien.wav",
       gptaudio: "./assets/comparison/02/02_gptaudio.wav",
       qwen: "./assets/comparison/02/02_qwen.wav",
+      gemini: "./assets/comparison/02/02_gemini.wav",
+      glmvoice: "./assets/comparison/02/02_glmvoice.wav",
     },
   },
   {
@@ -30,6 +34,8 @@ const comparisonSamples = [
       omnihokkien: "./assets/comparison/03/03_omnihokkien.wav",
       gptaudio: "./assets/comparison/03/03_gptaudio.wav",
       qwen: "./assets/comparison/03/03_qwen.wav",
+      gemini: "./assets/comparison/03/03_gemini.wav",
+      glmvoice: "./assets/comparison/03/03_glmvoice.wav",
     },
   },
   {
@@ -41,6 +47,8 @@ const comparisonSamples = [
       omnihokkien: "./assets/comparison/04/04_omnihokkien.wav",
       gptaudio: "./assets/comparison/04/04_gptaudio.wav",
       qwen: "./assets/comparison/04/04_qwen.wav",
+      gemini: "./assets/comparison/04/04_gemini.wav",
+      glmvoice: "./assets/comparison/04/04_glmvoice.wav",
     },
   },
   {
@@ -52,6 +60,8 @@ const comparisonSamples = [
       omnihokkien: "./assets/comparison/05/05_omnihokkien.wav",
       gptaudio: "./assets/comparison/05/05_gptaudio.wav",
       qwen: "./assets/comparison/05/05_qwen.wav",
+      gemini: "./assets/comparison/05/05_gemini.wav",
+      glmvoice: "./assets/comparison/05/05_glmvoice.wav",
     },
   },
   {
@@ -63,6 +73,8 @@ const comparisonSamples = [
       omnihokkien: "./assets/comparison/06/06_omnihokkien.wav",
       gptaudio: "./assets/comparison/06/06_gptaudio.wav",
       qwen: "./assets/comparison/06/06_qwen.wav",
+      gemini: "./assets/comparison/06/06_gemini.wav",
+      glmvoice: "./assets/comparison/06/06_glmvoice.wav",
     },
   },
   {
@@ -74,6 +86,8 @@ const comparisonSamples = [
       omnihokkien: "./assets/comparison/07/07_omnihokkien.wav",
       gptaudio: "./assets/comparison/07/07_gptaudio.wav",
       qwen: "./assets/comparison/07/07_qwen.wav",
+      gemini: "./assets/comparison/07/07_gemini.wav",
+      glmvoice: "./assets/comparison/07/07_glmvoice.wav",
     },
   },
   {
@@ -85,6 +99,8 @@ const comparisonSamples = [
       omnihokkien: "./assets/comparison/08_en_text/08_omnihokkien.wav",
       gptaudio: "./assets/comparison/08_en_text/08_gptaudio.wav",
       qwen: "./assets/comparison/08_en_text/08_qwen.wav",
+      gemini: "./assets/comparison/08_en_text/08_gemini.wav",
+      glmvoice: "./assets/comparison/08_en_text/08_glmvoice.wav",
     },
   },
   {
@@ -96,6 +112,8 @@ const comparisonSamples = [
       omnihokkien: "./assets/comparison/09_en_text/09_omnihokkien.wav",
       gptaudio: "./assets/comparison/09_en_text/09_gptaudio.wav",
       qwen: "./assets/comparison/09_en_text/09_qwen.wav",
+      gemini: "./assets/comparison/09_en_text/09_gemini.wav",
+      glmvoice: "./assets/comparison/09_en_text/09_glmvoice.wav",
     },
   },
   {
@@ -107,6 +125,8 @@ const comparisonSamples = [
       omnihokkien: "./assets/comparison/10_zh_text/10_omnihokkien.wav",
       gptaudio: "./assets/comparison/10_zh_text/10_gptaudio.wav",
       qwen: "./assets/comparison/10_zh_text/10_qwen.wav",
+      gemini: "./assets/comparison/10_zh_text/10_gemini.wav",
+      glmvoice: "./assets/comparison/10_zh_text/10_glmvoice.wav",
     },
   },
 ];
@@ -115,6 +135,8 @@ const comparedModels = [
   { key: "omnihokkien", name: "OmniHokkien", note: "This release", featured: true },
   { key: "gptaudio", name: "GPT Audio", note: "Comparison output" },
   { key: "qwen", name: "Qwen3.5-Omni-Plus", note: "Comparison output" },
+  { key: "gemini", name: "Gemini", note: "Comparison output" },
+  { key: "glmvoice", name: "GLM-Voice", note: "Comparison output" },
 ];
 
 const comparisonState = {

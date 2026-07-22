@@ -294,53 +294,6 @@ document.querySelector(".demo-timeline")?.addEventListener("click", (event) => {
   demoAudio.currentTime = ratio * demoAudio.duration;
 });
 
-const featurePlayer = document.querySelector("[data-feature-player]");
-const featureAudio = featurePlayer?.querySelector("audio");
-const featureButton = featurePlayer?.querySelector(".feature-play");
-const featureProgress = featurePlayer?.querySelector(".feature-progress span");
-const featureTime = featurePlayer?.querySelector(".feature-time");
-
-featureButton?.addEventListener("click", () => {
-  stopOtherAudio(featureAudio);
-  if (featureAudio.paused) {
-    featureAudio.play();
-  } else {
-    featureAudio.pause();
-  }
-});
-
-featureAudio?.addEventListener("play", () => {
-  featureButton.querySelector(".play-symbol").textContent = "Ⅱ";
-});
-
-featureAudio?.addEventListener("pause", () => {
-  featureButton.querySelector(".play-symbol").textContent = "▶";
-});
-
-featureAudio?.addEventListener("timeupdate", () => {
-  const progress = featureAudio.duration ? (featureAudio.currentTime / featureAudio.duration) * 100 : 0;
-  featureProgress.style.width = `${progress}%`;
-  featureTime.textContent = formatTime(featureAudio.currentTime);
-});
-
-featureAudio?.addEventListener("ended", () => {
-  featureAudio.currentTime = 0;
-});
-
-const heroWave = document.querySelector("[data-hero-wave]");
-if (heroWave) {
-  for (let index = 0; index < 43; index += 1) {
-    const bar = document.createElement("span");
-    const envelope = Math.sin((index / 42) * Math.PI);
-    const detail = Math.sin(index * 1.79) * 0.22 + Math.sin(index * 0.47) * 0.15;
-    const height = Math.max(2, (envelope * 72 + detail * 45 + 8));
-    bar.style.setProperty("--height", `${height}%`);
-    bar.style.setProperty("--opacity", `${0.22 + envelope * 0.72}`);
-    bar.style.setProperty("--delay", `${(index % 9) * -0.16}s`);
-    heroWave.appendChild(bar);
-  }
-}
-
 const header = document.querySelector("[data-header]");
 const progressBar = document.querySelector(".page-progress span");
 function handleScroll() {
@@ -351,19 +304,6 @@ function handleScroll() {
 }
 window.addEventListener("scroll", handleScroll, { passive: true });
 handleScroll();
-
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.12, rootMargin: "0px 0px -50px" }
-);
-document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
 
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
@@ -377,20 +317,6 @@ siteNav?.querySelectorAll("a").forEach((link) => {
     navToggle?.setAttribute("aria-expanded", "false");
     siteNav.classList.remove("is-open");
   });
-});
-
-document.querySelector("[data-copy-code]")?.addEventListener("click", async (event) => {
-  const button = event.currentTarget;
-  const code = document.querySelector(".code-panel code")?.innerText ?? "";
-  try {
-    await navigator.clipboard.writeText(code);
-    button.querySelector(".copy-label").textContent = "Copied";
-    window.setTimeout(() => {
-      button.querySelector(".copy-label").textContent = "Copy";
-    }, 1500);
-  } catch {
-    button.querySelector(".copy-label").textContent = "Select code";
-  }
 });
 
 document.querySelector("[data-year]").textContent = new Date().getFullYear();
